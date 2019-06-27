@@ -36,7 +36,10 @@ public class LowerRequestRecorderGlobalFilter implements GlobalFilter, Ordered {
             return chain.filter(exchange);
         }
 
+        // 在 GatewayFilter 之前执行， 此时的request时最初的request
         RecorderServerHttpRequestDecorator request = new RecorderServerHttpRequestDecorator(exchange.getRequest());
+
+        // 此时的response时 发送回客户端的 response
         RecorderServerHttpResponseDecorator response = new RecorderServerHttpResponseDecorator(exchange.getResponse());
 
         ServerWebExchange ex = exchange.mutate()
