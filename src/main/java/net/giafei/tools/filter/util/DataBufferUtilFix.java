@@ -39,7 +39,7 @@ import java.io.InputStream;
  */
 
 
-//当前所用的spring的DataBufferUtil有bug，目前已经在GIT上面修复，这里是参考的GIT的代码
+//当前版本的spring的DataBufferUtil有bug，官方已经在后续版本修复，这里是参考的后续版本的GIT的代码
 public class DataBufferUtilFix {
     public static Mono<DataBufferWrapper> join(Flux<DataBuffer> dataBuffers) {
         return dataBuffers.collectList()
@@ -60,7 +60,7 @@ public class DataBufferUtilFix {
                     }
 
                     DataBufferWrapper wrapper = new DataBufferWrapper(stream.toByteArray(), buf.factory());
-                    DataBufferUtils.release(buf);   //当前正在用的 DataBufferUtils::join 没有这一句
+                    DataBufferUtils.release(buf);   //当前版本的 DataBufferUtils::join 没有这一句
 
                     return wrapper;
                 })
