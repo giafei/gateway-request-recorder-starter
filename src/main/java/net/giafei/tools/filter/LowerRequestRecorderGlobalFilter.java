@@ -16,7 +16,7 @@ import reactor.core.publisher.Mono;
 import java.net.URI;
 
 @Component
-@ConditionalOnProperty(value = "tuhuanjk.gateway.log.enable", matchIfMissing = true)
+@ConditionalOnProperty(value = "gateway.log.enable", matchIfMissing = true)
 public class LowerRequestRecorderGlobalFilter implements GlobalFilter, Ordered {
     private Logger logger = LoggerFactory.getLogger(GatewayLoggerProfile.LOGGER_NAME);
 

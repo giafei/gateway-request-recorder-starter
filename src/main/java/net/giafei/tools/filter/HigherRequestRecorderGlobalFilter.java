@@ -42,7 +42,7 @@ import java.net.URI;
  */
 
 @Component
-@ConditionalOnProperty(value = "tuhuanjk.gateway.log.enable", matchIfMissing = true)
+@ConditionalOnProperty(value = "gateway.log.enable", matchIfMissing = true)
 public class HigherRequestRecorderGlobalFilter implements GlobalFilter, Ordered {
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
