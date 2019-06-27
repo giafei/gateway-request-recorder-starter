@@ -57,6 +57,7 @@ public class GatewayLoggerProfile {
     public void onReady() {
         LoggerContext context = (LoggerContext)StaticLoggerBinder.getSingleton().getLoggerFactory();
 
+        //把 log 写入到专门的文件中
         Logger logger = context.getLogger(LOGGER_NAME);
         logger.detachAndStopAllAppenders();
 
@@ -66,6 +67,7 @@ public class GatewayLoggerProfile {
         else
             logFile = logPath + "/pv/pv.log";
 
+        //以下代码 通过反编译 log组件代码发现的， 不保证时效性
         RollingFileAppender<ILoggingEvent> appender = new RollingFileAppender<>();
         appender.setFile(logFile);
 
