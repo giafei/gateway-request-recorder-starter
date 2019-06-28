@@ -11,7 +11,7 @@ logging.pattern.file | 日志格式
  
  ### 效果
  
- ```HTTP
+ ```
  ------------开始时间 1533963520775------------
  原始请求：
  GET http://localhost:8080/filter/echo?a=1&b=2
@@ -46,7 +46,7 @@ logging.pattern.file | 日志格式
  ------------ end at 1533963520873------------
  ```
  
- ```HTTP
+ ```
  ------------开始时间 1533963577778------------
  原始请求：
  POST http://localhost:8080/filter/echo?a=1&b=2
@@ -89,7 +89,7 @@ logging.pattern.file | 日志格式
  }2:"b" ,1:"a"{
  ------------ end at 1533963577796------------
  ```
- ```HTTP
+ ```
  ------------开始时间 1533963706176------------
  原始请求：
  GET http://localhost:8080/image/webp
